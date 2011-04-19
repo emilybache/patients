@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  medicine_name: MyString
+  dispense_date: 2011-04-19
+  days_supply: 1
+  patient_id: 1
+
+two:
+  medicine_name: MyString
+  dispense_date: 2011-04-19
+  days_supply: 1
+  patient_id: 1

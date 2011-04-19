@@ -1,0 +1,33 @@
+<%= form_for(@prescription) do |f| %>
+  <% if @prescription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prescription.errors.count, "error") %> prohibited this prescription from being saved:</h2>
+
+      <ul>
+      <% @prescription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :medicine_name %><br />
+    <%= f.text_field :medicine_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dispense_date %><br />
+    <%= f.date_select :dispense_date %>
+  </div>
+  <div class="field">
+    <%= f.label :days_supply %><br />
+    <%= f.text_field :days_supply %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_id %><br />
+    <%= f.text_field :patient_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

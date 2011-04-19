@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Medicine name:</b>
+  <%= @prescription.medicine_name %>
+</p>
+
+<p>
+  <b>Dispense date:</b>
+  <%= @prescription.dispense_date %>
+</p>
+
+<p>
+  <b>Days supply:</b>
+  <%= @prescription.days_supply %>
+</p>
+
+<p>
+  <b>Patient:</b>
+  <%= @prescription.patient_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_prescription_path(@prescription) %> |
+<%= link_to 'Back', prescriptions_path %>
