@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20110503114457
+#
+# Table name: prescriptions
+#
+#  id            :integer         not null, primary key
+#  medicine_name :string(255)
+#  dispense_date :date
+#  days_supply   :integer
+#  patient_id    :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
