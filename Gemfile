@@ -27,5 +27,6 @@ group :test do
   gem 'culerity'
   gem 'celerity', :require => nil # JRuby only.
   gem 'database_cleaner'
+  gem 'factory_girl_rails', '1.0'
 end
 

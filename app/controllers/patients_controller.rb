@@ -14,6 +14,7 @@ class PatientsController < ApplicationController
   # GET /patients/1.xml
   def show
     @patient = Patient.find(params[:id])
+    @title = @patient.name
 
     respond_to do |format|
       format.html # show.html.erb
