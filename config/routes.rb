@@ -1,17 +1,20 @@
 Patients::Application.routes.draw do
+  root :to => 'pages#home'
+
+  get "sessions/new"
+  get "pages/home"
+  get "pages/contact"
 
   match '/signup',  :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
-
-  root :to => 'pages#home'
-
-  get "pages/home"
-  get "pages/contact"
+  match '/signin',  :to => 'sessions#new'
+  match '/signout',  :to => 'sessions#destroy'
 
   resources :prescriptions
   resources :patients
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
