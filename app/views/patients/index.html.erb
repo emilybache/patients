@@ -1,17 +1,15 @@
 <h1>Listing patients</h1>
 
-<table>
+<table class="patient">
   <tr>
     <th>Name</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @patients.each do |patient| %>
   <tr>
-    <td><%= patient.name %></td>
-    <td><%= link_to 'Show', patient %></td>
+    <td><%= link_to patient.name, patient %></td>
     <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
     <td><%= link_to 'Destroy', patient, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

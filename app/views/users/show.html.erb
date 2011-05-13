@@ -1,3 +1,8 @@
 <h1>
   <%= @user.name %> is an Admin User
 </h1>
+<% if current_user?(@user) %>
+  <p>
+    <%= link_to "Change Password", edit_user_path(@user) %>
+  </p>
+<% end %>

@@ -2,6 +2,10 @@ Given /^there is a user with name "([^"]*)", email "([^"]*)" and password "([^"]
   User.create!(:name => name, :email => email, :password => password)
 end
 
+Given /^I am not signed in$/ do
+end
+
+
 Given /^I am signed in as "([^"]*)"$/ do |name|
   user = Factory.create(:user, :name => name)
   steps %Q{

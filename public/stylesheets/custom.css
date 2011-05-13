@@ -163,3 +163,11 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+ul.patient {
+  margin-top: 1em;
+}
+
+.patient li {
+  list-style: none;
+}

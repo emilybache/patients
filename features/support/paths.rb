@@ -10,6 +10,15 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+      
+    when /the page for "(.*)"$/i
+      user_path(User.find_by_name($1))
+
+    when /the patient page for "(.*)"/i
+      patient_path(Patient.find_by_name($1))
+
+    when /the edit page for "(.*)"/i
+      edit_user_path(User.find_by_name($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

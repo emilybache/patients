@@ -3,8 +3,9 @@
   We are concerned patients might be taking unsuitable combinations of medications. Use this application to find out.
 </p>
 <p>
-  <%= link_to "View Patients", 'patients' %>
+  <% if signed_in? %>
+    <%= link_to "View Patients", 'patients' %>
+  <% else %>
+    <%= link_to "Admin account request", 'signup', :class => "signup_button round" %>
+  <% end %>
 </p>
-<% if !signed_in? %>
-  <%= link_to "Admin account request", 'signup', :class => "signup_button round" %>
-<% end %>
