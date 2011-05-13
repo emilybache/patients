@@ -12,6 +12,11 @@ Feature: sign in
     Then I should see "Fred"
     And I should see "Sign out"
 
+  Scenario: links on home page are correct
+    Given I am signed in as "Fred"
+    When I go to the home page
+    Then I should not see "Admin account request"
+
   Scenario: sign out
     Given I am signed in as "Fred"
     When I follow "Sign out"
