@@ -2,7 +2,8 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions
   # GET /prescriptions.xml
   def index
-    @prescriptions = Prescription.all
+    @patient = Patient.find_by_id(params[:patient])
+    @prescriptions = @patient ? @patient.prescriptions : Prescription.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -74,10 +75,11 @@ class PrescriptionsController < ApplicationController
   # DELETE /prescriptions/1.xml
   def destroy
     @prescription = Prescription.find(params[:id])
+    @patient = @prescription.patient
     @prescription.destroy
 
     respond_to do |format|
-      format.html { redirect_to(prescriptions_url) }
+      format.html { redirect_to(prescriptions_path(:patient => @patient)) }
       format.xml  { head :ok }
     end
   end

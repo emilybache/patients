@@ -1,29 +1,6 @@
-<h1>Listing prescriptions</h1>
-
-<table>
-  <tr>
-    <th>Medicine name</th>
-    <th>Dispense date</th>
-    <th>Days supply</th>
-    <th>Patient</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @prescriptions.each do |prescription| %>
-  <tr>
-    <td><%= prescription.medicine_name %></td>
-    <td><%= prescription.dispense_date %></td>
-    <td><%= prescription.days_supply %></td>
-    <td><%= prescription.patient_id %></td>
-    <td><%= link_to 'Show', prescription %></td>
-    <td><%= link_to 'Edit', edit_prescription_path(prescription) %></td>
-    <td><%= link_to 'Destroy', prescription, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if @patient %>
+  <%= render 'all_for_patient' %>
+<% else %>
+  <%= render 'all' %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Prescription', new_prescription_path %>
+<%= link_to "View All Patients", patients_path %>

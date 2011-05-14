@@ -16,6 +16,9 @@
         </tr>
       <% end %>
       </table>
+      <p>
+        <%= link_to "All Prescriptions", prescriptions_path(:patient => @patient) %>
+      </p>
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @patient.name %><br />
