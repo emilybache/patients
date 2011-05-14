@@ -16,6 +16,7 @@ Feature: sign in
     Given I am signed in as "Fred"
     When I go to the home page
     Then I should not see "Admin account request"
+    And I should see "View Patients"
 
   Scenario: links on home page are appropriate when signed out
     Given I am not signed in

@@ -15,9 +15,9 @@
 
 <p>
   <b>Patient:</b>
-  <%= @prescription.patient ? @prescription.patient.name : @prescription.patient %>
+  <%= @prescription.patient ? link_to(@prescription.patient.name, @prescription.patient) : @prescription.patient %>
 </p>
 
 
 <%= link_to 'Edit', edit_prescription_path(@prescription) %> |
-<%= link_to 'Back', prescriptions_path %>
+<%= link_to 'View all', prescriptions_path %>

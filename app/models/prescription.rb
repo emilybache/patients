@@ -17,5 +17,11 @@ class Prescription < ActiveRecord::Base
 
   validates_inclusion_of :days_supply, :in => 1..90, :message => "must be between 1 and 90 days"
   validates_presence_of :medicine_name
-  
+
+  def days_taken(days_back)
+    (0...days_supply).map do |day|
+      day_taken = dispense_date + day
+      (day_taken <= Date.today && day_taken >= Date.today - days_back) ? day_taken : nil
+    end.compact
+  end
 end

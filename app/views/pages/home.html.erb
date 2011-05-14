@@ -4,7 +4,9 @@
 </p>
 <p>
   <% if signed_in? %>
-    <%= link_to "View Patients", 'patients' %>
+    <%= link_to "View Patients", patients_path %>
+    <br/>
+    <%= link_to "View Prescriptions", prescriptions_path %>
   <% else %>
     <%= link_to "Admin account request", 'signup', :class => "signup_button round" %>
   <% end %>
