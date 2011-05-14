@@ -25,6 +25,7 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions/new.xml
   def new
     @prescription = Prescription.new
+    @patient = Patient.find_by_id(params[:patient])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +41,7 @@ class PrescriptionsController < ApplicationController
   # POST /prescriptions
   # POST /prescriptions.xml
   def create
-    @prescription = Prescription.new(params[:prescription])
+    @prescription = Prescription.create!(params[:prescription])
 
     respond_to do |format|
       if @prescription.save

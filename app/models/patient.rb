@@ -12,6 +12,6 @@
 class Patient < ActiveRecord::Base
   has_many :prescriptions
 
-  attr_accessible :name, :prescriptions
   validates_presence_of :name
+  validates_uniqueness_of :name
 end

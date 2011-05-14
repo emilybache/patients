@@ -23,10 +23,7 @@
     <%= f.label :days_supply %><br />
     <%= f.text_field :days_supply %>
   </div>
-  <div class="field">
-    <%= f.label :patient_id %><br />
-    <%= f.text_field :patient_id %>
-  </div>
+  <%= f.hidden_field :patient_id, :value => @patient.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -13,7 +13,6 @@
 #
 
 class Prescription < ActiveRecord::Base
-  attr_accessible :medicine_name, :dispense_date, :days_supply
   belongs_to :patient
 
   validates_inclusion_of :days_supply, :in => 1..90, :message => "must be between 1 and 90 days"
