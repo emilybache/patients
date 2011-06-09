@@ -16,19 +16,20 @@
     <td><%= prescription.dispense_date %></td>
     <td><%= prescription.days_supply %></td>
     <td><%= link_to 'Show', prescription %></td>
-    <td><%= link_to 'Edit', edit_prescription_path(prescription) %></td>
+    <td><%= link_to 'Edit', edit_prescription_path(prescription, :patient => @patient) %></td>
     <td><%= link_to 'Delete', prescription, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 <p>
   <% if @prescriptions %>
-    <%= "Showing all #{@prescriptions.length} prescription(s) for #{@patient.name}" %>
+    <%= "Showing all #{@prescriptions.length} prescription(s) for "%> 
   <% else %>
-    <%= "No prescriptions found for #{@patient.name}" %>
+    <%= "No prescriptions found for " %>
   <% end %>
+  <%= link_to(@patient.name, @patient) %>
 </p>
+<%= link_to 'Add Prescription', new_prescription_path(:patient => @patient) %>
 <br />
-<%= link_to "View All Prescriptions", prescriptions_path %>
 <br />
 

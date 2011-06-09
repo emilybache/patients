@@ -37,6 +37,7 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions/1/edit
   def edit
     @prescription = Prescription.find(params[:id])
+    @patient = Patient.find_by_id(params[:patient])
   end
 
   # POST /prescriptions
@@ -59,7 +60,6 @@ class PrescriptionsController < ApplicationController
   # PUT /prescriptions/1.xml
   def update
     @prescription = Prescription.find(params[:id])
-
     respond_to do |format|
       if @prescription.update_attributes(params[:prescription])
         format.html { redirect_to(@prescription, :notice => 'Prescription was successfully updated.') }
