@@ -14,7 +14,7 @@
           <th>Medicine Name</th><th>Days taken (last 90 days)</th>
           </tr>
         <% @patient.medicines_taken.each do |medicine_name| %>
-          <tr id="<%= medicine_name.downcase %>">
+          <tr id="<%= row_id(medicine_name) %>">
             <td><%= medicine_name %></td><td><%= @patient.days_taken(medicine_name, 90).length %></td>
           </tr>
         <% end %>

@@ -7,7 +7,7 @@
   </tr>
 
 <% @patients.each do |patient| %>
-  <tr id="<%=patient.name.downcase %>">
+  <tr id="<%=row_id(patient) %>">
     <td><%= link_to patient.name, patient %></td>
     <td><%= patient.prescriptions.length %></td>
     <td><%= link_to 'Add Prescription', new_prescription_path(:patient => patient), %></td>

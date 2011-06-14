@@ -24,4 +24,5 @@ class Prescription < ActiveRecord::Base
       (day_taken <= Date.today && day_taken >= Date.today - days_back) ? day_taken : nil
     end.compact
   end
+
 end

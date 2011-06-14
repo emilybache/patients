@@ -24,4 +24,5 @@ class Patient < ActiveRecord::Base
       prescription.medicine_name == medicine_name ? prescription.days_taken(days_back) : nil
     end.flatten.compact.uniq
   end
+
 end

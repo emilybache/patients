@@ -11,7 +11,7 @@
   </tr>
 
 <% @prescriptions.each do |prescription| %>
-  <tr>
+  <tr id="<%= row_id(prescription.medicine_name) %>">
     <td><%= prescription.medicine_name %></td>
     <td><%= prescription.dispense_date %></td>
     <td><%= prescription.days_supply %></td>
